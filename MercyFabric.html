@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercy Clothings</title>
+    <link rel="stylesheet" href="MercyFabric.css">
+    <script src="MercyFabric.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav >
+            <div class="header">
+                <div class="logo"><img src="Logo.png"></div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search Mercy Fabrics">
+                    <button  onclick="searchProducts()"><box-icon name='search'></box-icon></button>
+                </div>
+                <div class="hamburger" onclick="toggleMenu()"><box-icon name='menu'></box-icon></div>
+                <div class="menu">
+                    <a href="#">Today's Deals</a>
+                    <a href="#">Registry</a>
+                    <a href="#MercySign-in.html">Customer Service</a>
+                    <a href="#">Gift Cards</a>
+                    <a href="#">Sell</a>
+                </div>
+                <div class="cart">
+                    <a href="#">Account & Lists</a>
+                    <a href="#">Returns & Orders</a>
+                    <div class="cart-icon" onclick="toggleCart()"><box-icon name='cart'></box-icon><span id="cart-count">(0)</span></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Fabrics</a></li>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Men's Clothing</a></li>
+                <li><a href="#">Women's Clothing</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="featured-products">
+                <h1>Popular Products</h1>
+                <div class="product-grid" id="product-grid">
+                    <div class="product-card">
+                        <img src="Baggy.jpg" alt="Baggy Pants">
+                        <h3>Baggy Pants</h3>
+                        <p>$59.99</p>
+                        <button onclick="addToCart('Baggy Pants', 59.99)">Add to Cart</button>
+                    </div>
+                
+                    <div class="product-card" data-name="Stylish Hoodie">
+                        <img src="Hoodie.jpg" alt="Hoodie">
+                        <h3>Stylish Hoodie</h3>
+                        <p>$69.99</p>
+                        <button onclick="addToCart('Stylish Hoodie', 69.99)">Add to Cart</button>
+                    </div>
+                    
+                    <div class="product-card" data-name="Gucci T-Shirt">
+                        <img src="Gucci.jpg" alt="Gucci T-Shirt">
+                        <h3>Gucci T-Shirt</h3>
+                        <p>$44.99</p>
+                        <button onclick="addToCart('Gucci T-Shirt', 44.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-name="Butterfly Tee">
+                        <img src="Butterfly.jpg" alt="Butterfly Tee">
+                        <h3>Butterfly Tee</h3>
+                        <p>$70</p>
+                        <button onclick="addToCart('Butterfly Tee', 70)">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-name="LA Sweatshirt">
+                        <img src="Hoodie.jpg" alt="Los Angeles Sweatshirt">
+                        <h3>LA Sweatshirt</h3>
+                        <p>$40.99</p>
+                        <button onclick="addToCart('LA Sweatshirt', 40.99)">Add to Cart</button>
+                    </div>
+                </div>
+                <section class="Checkout">
+                <div id="cart-modal" class="cart-modal">
+                    <h2>Shopping Cart</h2>
+                    <ul id="cart-items"></ul>
+                    <p>Total: $<span id="cart-total">0.00</span></p>
+                    <button onclick="checkout()">Checkout</button>
+                </div>
+                </section>
+            </section>
+            <section >
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <h3>Fabric Accessories</h3>
+                        <div class="small-images">
+                            <img src="INCERUN.jpg" alt="Threads">
+                            <img src="ButtonShirt.jpg" alt="Buttons"> 
+                        </div>
+                        <div class="small-images">
+                            <img src="Novas.jpg" alt="Sewing Machine">
+                            <img src="NovasT.jpg" alt="Sewing Scissors">
+                        </div>
+                        <a href="#">See more</a>
+                    </div>
+                    
+                    <div class="grid-item">
+                        <h3>Elegant African Prints</h3>
+                        <img src="Sleeve.jpg" alt="African Print Fabric">
+                        <a href="#">Shop Now</a>
+                    </div>
+                
+                    <div class="grid-item">
+                        <h3>Shop for Your Sewing Essentials</h3>
+                        <div class="small-images">
+                            <img src="GURUNVANI.jpg" alt="Sewing Machine">
+                            <img src="Hiphop.jpg" alt="Sewing Scissors">
+                        </div>
+                        <div class="small-images">
+                            <img src="2pcs.jpg" alt="Sewing Machine">
+                            <img src="Shoe1.jpg" alt="Sewing Scissors">
+
+                        </div>
+                        <a href="#">Discover More</a>
+                    </div>
+                
+                    <div class="grid-item">
+                        <h3>Trending Deals in Fashion Fabrics</h3>
+                        <div class="small-images">
+                            <img src="Shoe2.jpg" alt="Silk Fabrics">
+                        </div>
+                        <a href="#">See all deals</a>
+                    </div>
+                
+                    <div class="grid-item">
+                        <h3>Top Categories in Home Textiles</h3>
+                        <img src="Abaya1.jpg" alt="Home Textile">
+                        <a href="#">Explore All</a>
+                    </div>
+                
+                    <div class="grid-item">
+                        <h3>New Arrivals Under $50</h3>
+                        <div class="small-images">
+                            <img src="Abaya2.jpg" alt="Affordable Fabric">
+                            <img src="Abaya3.jpg" alt="Stylish Textile">
+                        </div>
+                        <div class="small-images">
+                            <img src="Bag1.jpg" alt="Affordable Fabric">
+                            <img src="Bag2.jpg" alt="Stylish Textile">
+                        </div>
+                        <a href="#">Shop the Latest</a>
+                    </div>
+                
+                    <div class="grid-item">
+                        <h3>Refresh Your Space</h3>
+                        <div class="small-image">
+                            <img src="Bag3.jpg" alt="Curtains">
+                        </div>
+                        <div class="small-image">
+                            <img src="Abaya4.jpg" alt="Bedding Fabrics">
+                            <img src="Bag1.jpg" alt="Affordable Fabric">
+                            <img src="Bag2.jpg" alt="Stylish Textile">
+                        </div>
+                        <a href="#">See More</a>
+                    </div>
+                
+                    <div class="grid-item">
+                        <h3>Special Eid Collection</h3>
+                        <img src="Design.jpg" alt="Eid Deals">
+                        <a href="#">All Deals</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+            <!-- Testimonials -->
+            <section class="testimonial-section">
+                <h2>Customer Testimonials</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <img src="Mr Samuel.jpg" alt="Mr Paul Samuel">
+                        <h3>Mr Paul Samuel</h3>
+                        <p>This is a recommendable store.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="Mark.png" alt="Mark James">
+                        <h3>Mark James</h3>
+                        <p>They sell quality products.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="Angel.jpg" alt="Angel Gomez">
+                        <h3>Angel Gomez</h3>
+                        <p>They have durable and reliable products.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="Micheal.jpg" alt="Micheal David">
+                        <h3>Micheal David</h3>
+                        <p>Highly recommended store.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="White.jpg" alt="White Fernandez">
+                        <h3>White Fernandez</h3>
+                        <p>Highly recommended store.</p>
+                    </div>
+                </div>
+            </section>
+        
+    </div>
+    <div class="container">
+        <h2>See personalized recommendations</h2>
+        <a href="MercySign-in.html" class="signin-btn">Sign in</a>
+        <p class="new-customer">New customer? <a href="#">Start here.</a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <a href="#">Back to top</a>
+        </div>
+        
+        <!-- Footer Links -->
+        <div class="footer">
+            <div class="footer-links">
+                <div>
+                    <h3>Get to Know Us</h3>
+                    <a href="#">Careers</a><br>
+                    <a href="#">Blog</a><br>
+                    <a href="#">About Mercy Fabrics</a><br>
+                    <a href="#">Investor Relations</a><br>
+                    <a href="#">Mercy Devices</a><br>
+                    <a href="#">Mercy Science</a>
+                </div>
+                <div>
+                    <h3>Make Money with Us</h3>
+                    <a href="#">Sell products on Mercy</a><br>
+                    <a href="#">Sell on Mercy Business</a><br>
+                    <a href="#">Become an Affiliate</a><br>
+                    <a href="#">Advertise Your Products</a><br>
+                    <a href="#">Self-Publish with Us</a><br>
+                    <a href="#">Host a Mercy Hub</a>
+                </div>
+                <div>
+                    <h3>Mercy Payment Products</h3>
+                    <a href="#">Mercy Business Card</a><br>
+                    <a href="#">Shop with Points</a><br>
+                    <a href="#">Reload Your Balance</a><br>
+                    <a href="#">Mercy Currency Converter</a>
+                </div>
+                <div>
+                    <h3>Let Us Help You</h3>
+                    <a href="#">Your Account</a><br>
+                    <a href="#">Your Orders</a><br>
+                    <a href="#">Shipping Rates & Policies</a><br>
+                    <a href="#">Returns & Replacements</a><br>
+                    <a href="#">Manage Your Content & Devices</a><br>
+                    <a href="#">Help</a>
+                </div>
+            </div>
+        
+            <!-- Footer Logo -->
+            <div class="footer-logo">
+                <h2>Mercy Fabrics</h2>
+            </div>
+        
+            <!-- Footer Bottom Links -->
+            <div class="footer-bottom">
+                <a href="#">Conditions of Use</a> | 
+                <a href="#">Privacy Notice</a> | 
+                <a href="#">Consumer Health Data Privacy Disclosure</a> | 
+                <a href="#">Your Ads Privacy Choices</a>
+                <p>&copy; 2025 Mercy Fabrics, Inc. All rights reserved.</p>
+            </div>
+        </div>
+      </footer>
+      
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        updateCart();
+
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartCount = document.getElementById("cart-count");
+            let cartItems = document.getElementById("cart-items");
+            let cartTotal = document.getElementById("cart-total");
+            cartItems.innerHTML = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                let li = document.createElement("li");
+                li.textContent = `${item.product} - $${item.price.toFixed(2)}`;
+                let removeBtn = document.createElement("button");
+                removeBtn.textContent = "Remove";
+                removeBtn.onclick = () => removeFromCart(index);
+                li.appendChild(removeBtn);
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+
+            cartCount.textContent = `(${cart.length})`;
+            cartTotal.textContent = total.toFixed(2);
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function toggleCart() {
+            document.getElementById("cart-modal").classList.toggle("show");
+        }
+
+        function checkout() {
+            alert("Proceeding to checkout with " + cart.length + " items.");
+            cart = [];
+            updateCart();
+        }
+
+        function searchProducts() {
+            let query = document.getElementById("searchInput").value.toLowerCase();
+            let products = document.querySelectorAll(".product-card");
+            
+            products.forEach(product => {
+                let name = product.getAttribute("data-name").toLowerCase();
+                if (name.includes(query)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
